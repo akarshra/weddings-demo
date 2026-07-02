@@ -668,7 +668,7 @@ header:has(.hamburger.active) .nav-container {
   z-index: 3;
   text-align: center;
   max-width: 900px;
-  padding: 0 24px;
+  padding: 80px 24px 0; /* Pushes content down from the floating header */
   display: flex;
   flex-direction: column;
   align-items: center;
