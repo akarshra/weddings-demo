@@ -376,8 +376,8 @@ header {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 92%;
-  max-width: 1200px;
+  width: 95%; /* Increased width for responsive margin budget */
+  max-width: 1280px; /* Increased max-width for wider desktops */
   z-index: 1005;
   transition: var(--transition-smooth);
 }
@@ -389,7 +389,7 @@ header {
   -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.08); /* White glass border */
   border-radius: var(--radius-pill); /* Pill shaped island */
-  padding: 12px 30px;
+  padding: 10px clamp(15px, 2.5vw, 30px); /* Responsive padding to prevent button overflow */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -400,13 +400,14 @@ header {
 /* Header transition fallback script hooks (for older browsers) */
 .header-scrolled .nav-container {
   background: rgba(6, 58, 41, 0.85);
-  padding: 8px 25px;
+  padding: 8px clamp(12px, 2vw, 25px);
   border-color: rgba(199, 154, 99, 0.2);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(199, 154, 99, 0.1);
 }
 
 .header-scrolled-light .nav-container {
   background: rgba(247, 244, 239, 0.85);
+  padding: 8px clamp(12px, 2vw, 25px);
   border-color: rgba(199, 154, 99, 0.2);
   box-shadow: 0 10px 30px rgba(4, 37, 26, 0.1);
 }
@@ -425,7 +426,7 @@ header {
 @keyframes shrinkNav {
   to {
     background: rgba(6, 58, 41, 0.85);
-    padding: 8px 25px;
+    padding: 8px clamp(12px, 2vw, 25px);
     border-color: rgba(199, 154, 99, 0.2);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(199, 154, 99, 0.1);
   }
@@ -2074,16 +2075,16 @@ footer {
     display: flex;
     list-style: none;
     align-items: center;
-    gap: 30px;
+    gap: clamp(12px, 1.8vw, 25px); /* Responsive gap budgeting to prevent text wrapping */
   }
   
   .nav-menu a {
     text-decoration: none;
     font-family: var(--font-body);
-    font-size: 0.85rem;
+    font-size: clamp(0.72rem, 0.82vw, 0.85rem); /* Dynamically shrinks to fit medium laptops */
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: clamp(0.08em, 0.12vw, 0.15em); /* Responsive character spacing */
     color: rgba(255, 255, 255, 0.75);
     transition: var(--transition-fast);
     position: relative;
