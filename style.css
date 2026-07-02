@@ -383,6 +383,7 @@ header {
 }
 
 .nav-container {
+  width: 100%;
   background: rgba(6, 58, 41, 0.45); /* Semi-transparent emerald glass */
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
